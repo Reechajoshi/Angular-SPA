@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app='feedModule'>
+<head>
+
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script src="lib/jquery.min.js"></script><!-- JQuery library -->
+
+	<!-- Angular JS libraries -->
+	<script src="lib/angular.min.js"></script>
+	<script src="lib/angular-resource.min.js"></script>
+	<script src="lib/angular-sanitize.js"></script>
+
+
+	<!-- Bootstrap Libraries -->
+	<link rel="stylesheet" href="lib/bootstrap.min.css">
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+	<script src="lib/bootstrap.min.js"></script>
+	
+	<!-- Google Fonts -->
+	<link href='lib/google-font1.css' rel='stylesheet' type='text/css'>
+	<link href='lib/google-font2.css' rel='stylesheet' type='text/css'>
+
+	<!-- Custom CSS Code -->
+	<link href="stylesheet/main.css" rel="stylesheet">
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="lib/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="lib/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<!-- Add Button helper -->
+	<link rel="stylesheet" type="text/css" href="lib/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="lib/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper -->
+	<link rel="stylesheet" type="text/css" href="lib/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="lib/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper -->
+	<script type="text/javascript" src="lib/jquery.fancybox-media.js?v=1.0.6"></script>
+	<script type="text/javascript" src="lib/fancybox_lib.js"></script>
+	
+	<!-- Custom JS code	-->
+	<script type="text/javascript" src="main.js"></script>
+	
+	<script src="feeds.js"></script>
+</head>
+
+<body ng-controller='FeedCtrl'>
+	<div ng-repeat="feed in feeds">
+		<!-- Display the title | on click of title go to link -->
+		<nav class="navbar navbar-inverse navbar-fixed-top heading">
+			<div class="container-fluid">
+				<div class="navbar-header ">
+					<a class="navbar-brand " href="{{feed.link}}">{{feed.title}}</a>
+					</div>
+			</div>
+		</nav>
+
+		<!-- loop through the entries -->
+		<div class="container-fluid parent_container">
+			<div class="col-lg-6 entry_block" ng-repeat="item in feed.entries" >
+				<div class="content_block">
+					<div class="row">
+						<div id="row1_content" class="col-md-12">
+							<a class="fancybox fancybox.iframe blog_title" href="{{item.link}}">{{item.title}}</a>
+							<div style="border-bottom:1px solid #337ab7;width:100%;margin:0 auto;"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div style="padding:10px 15px;">
+							<div ng-show="item.img_src" id="block_image" class="">
+								<a class="fancybox fancybox.iframe" href="{{item.link}}"><img style="height:100%;" class="img-responsive" src="{{item.img_src}}"></a>
+							</div>
+							<div id="block_summary" class="" style="margin-left:10px;float:left;width:47%;height:174px;font-size: 17px;">
+								<div ng-bind-html=item.contentSnippet></div>
+							</div>
+							<div style="clear:both;"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div  class="col-md-12" id="date">
+							{{item.publishedDate | date:'d-MM-yyyy HH:mm'}}
+							<div style="width:100%;border-top:1px solid #337ab7;margin-top:10px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

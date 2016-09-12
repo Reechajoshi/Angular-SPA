@@ -1,0 +1,93 @@
+body{
+	background-color: #E8E8E8;
+	font-family: 'Abel', sans-serif;
+	font-size: 20px;
+}
+.heading {
+	font-family: 'Slabo 27px', serif;
+	font-weight:bold;
+/* IE10+ */ 
+background-image: -ms-linear-gradient(bottom, #3F62D4 0%, #13265E 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(bottom, #3F62D4 0%, #13265E 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(bottom, #3F62D4 0%, #13265E 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3F62D4), color-stop(100, #13265E));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(bottom, #3F62D4 0%, #13265E 100%);
+
+/* W3C Markup */ 
+background-image: linear-gradient(to top, #3F62D4 0%, #13265E 100%);
+
+-webkit-box-shadow: 0px 0px 8px 2px #000000;
+       -moz-box-shadow: 0px 0px 8px 2px #000000;
+            box-shadow: 0px 0px 8px 2px #000000;
+	top:0px;
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+	font-size:20px;
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+	color: #9d9d9d;
+}
+
+.navbar {
+	border:none;
+}
+
+.parent_container {
+	margin-top:60px;
+}
+
+
+.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+		
+.content_block {
+	background-color: white;
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+	padding:10px;
+	width:100%;
+	margin:0 auto;
+}
+
+a.blog_title{
+	font-weight:bold;
+}
+a.blog_title:hover {
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.entry_block {
+	padding-top:15px;
+	padding-bottom:15px;
+	float:left;
+}
+
+.row1_content {
+	margin: 7px 0;
+}
+
+#block_image {
+	height:174px;
+	float:left;
+	width:50%;
+}
+
+#date {
+	text-align:right;
+	color: #337ab7;
+	font-size: 16px;
+}
